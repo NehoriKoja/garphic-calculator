@@ -199,3 +199,8 @@ def evaluate_tree(node):
         return left_val ** right_val
 
     raise ValueError(f"Unknown operator: {node.value}")
+
+def Calc(p):
+    tokens = split_the_string(p)
+    root_node = parse_to_tree(tokens)
+    return str(evaluate_tree(root_node))

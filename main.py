@@ -1,6 +1,6 @@
 
 import pygame
-from math_functions import split_the_string, parse_to_tree, evaluate_tree
+from math_functions import Calc
 
 # --- Button Class ---
 class Button:
@@ -129,10 +129,7 @@ def main():
 
                     elif button.text == "=":
                         try:
-                            tokens = split_the_string(math_string)
-                            root_node = parse_to_tree(tokens)
-                            result = evaluate_tree(root_node)
-                            math_string = str(result)
+                            math_string = Calc(math_string)
                             result_shown = True
 
                         except (ValueError, ZeroDivisionError, OverflowError) as error:
